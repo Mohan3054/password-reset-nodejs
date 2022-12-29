@@ -173,6 +173,7 @@ router.post("/sendpasswordlink", async (req, res) => {
             }
 
             transporter.sendMail(mailOptions, (error, info) => {
+                
                 if (error) {
                     console.log("error", error);
                     res.status(401).json({ status: 401, message: "email not send" })
